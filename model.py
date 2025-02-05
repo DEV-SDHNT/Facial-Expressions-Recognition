@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 #from sklearn.naive_bayes import GaussianNB,BernoulliNB,MultinomialNB
 #from sklearn.multioutput import MultiOutputClassifier
 
-ds=pd.read_csv('fer2013.csv')
+ds=pd.read_csv('../fer2013.csv')
 y=ds['emotion']
 x=ds['pixels'].apply(lambda x:np.array(x.split(' '),dtype='int32').reshape(48,48))
 
@@ -26,8 +26,7 @@ x=ds['pixels'].apply(lambda x:np.array(x.split(' '),dtype='int32').reshape(48,48
 x=np.stack(x)
 classes=['Angry','Disgust','Fear','Happy','Sad','Surprise','Neutral']
 
-xtrain,xtest,ytrain,ytest=train_test_split(x.reshape(x.shape[0],-1),y,test_size=0.1,random_state=0)
-print("Splited ::::")
+xtrain,xtest,ytrain,ytest=train_test_split(x.reshape(x.shape[0],-1),y,test_size=0.1,random_state=463)
 
 #model=BernoulliNB()
 #model=SVC(kernel="linear",verbose=True)
@@ -35,7 +34,7 @@ print("Splited ::::")
 #model=DecisionTreeClassifier()
 #model=MLPClassifier(hidden_layer_sizes=(150,),max_iter=50,alpha=1e-4,solver='sgd',verbose=10,tol=0.001,random_state=1,learning_rate_init=.001,early_stopping=False)
 #model=MultiOutputClassifier(,n_jobs=-1)
-model=RandomForestClassifier(n_jobs=-1,verbose=True)
+model=RandomForestClassifier(n_jobs=-1,verbose=True,n_estimators=200,max_depth=1000)
 print("Training :::")
 
 yt=list(ytest)

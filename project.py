@@ -24,9 +24,9 @@ while True:
     faces=face_cascade.detectMultiScale(gray,scaleFactor=1.3,minNeighbors=5)
     for (x,y,w,h) in faces:
         face=frame[y:y+h,x:x+w]
-        frame=cv2.rectangle(frame,(w,h),(x,y),(0,255,0),1)
+        frame=cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),1)
         processedFace=preProcessedFrame(face)
         pred=model.predict(processedFace.reshape(1,-1))
         print(pred ,classes[int(pred)])
-        cv2.imshow("face",frame)
+    cv2.imshow("face",frame)
     cv2.waitKey(1)

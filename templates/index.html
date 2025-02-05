@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Expression Recognizer</title>
+    <style>
+        body{
+            position: relative;
+            background-color: black;
+        }
+        h1{
+            color:white;
+            text-align: center;
+        }
+        img{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,0%);
+            border-radius: 20px;
+            width: 80%;
+            height: 80vh;
+            box-shadow: #555 0 0 30px,#555 0 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Facial Expression Recognizer </h1>
+    <img src="{{url_for('video')}}">
+</body>
+</html>
