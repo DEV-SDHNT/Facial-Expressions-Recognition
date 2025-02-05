@@ -1,12 +1,12 @@
 # Facial-Expressions-Recognition
 First Machine Learning Project using Python.
 
-Libraries Used :-
-    - Scikit-Learn.
-    - Pandas.
-    - Numpy.
-    - Opencv.
+## Libraries Used :-
+#### Scikit-Learn.
+#### Pandas.
+#### Numpy.
+#### Opencv.
 
-Output :-
+## Output :-
 
 ![Alt text](output.png)
